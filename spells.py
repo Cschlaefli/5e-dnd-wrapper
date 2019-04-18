@@ -1,5 +1,6 @@
 from dndsdk import Spell
 
-spell = Spell.find("mage armor")
-print(spell.name)
+spells = Spell.where(name="Mage Armor")
+for spell in spells :
+    print(spell.desc)
 

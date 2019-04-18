@@ -16,11 +16,9 @@ class Spell(object):
     RESOURCE = 'spells'
 
     """Usual attributes :
-    artist, border, cmc, color_identity, colors, flavor, foreign_names, hand,
-    id, image_url, layout, legalities, life, loyalty, mana_cost, multiverse_id,
-    name, names, number, original_text, original_type, power, printings, rarity,
-    release_date, rulings, set, set_name, source, starter, subtypes, supertypes,
-    text, timeshifted, toughness, type, types, variations, watermark.
+    _id, index, name, desc, higher_level, page, range, components
+    material, ritual, duration, concentration, casting_time, level
+    school, classes, subclasses, url
     See online docs for details."""
 
     # some keys in the response_dict are of the form fooBarBaz ;
@@ -36,12 +34,8 @@ class Spell(object):
         return str(self.__dict__)
 
     @staticmethod
-    def find(id):
+    def find(id=False, name=False):
         return QueryBuilder(__class__).find(id)
-
-    @staticmethod
-    def find(name):
-        return QueryBuilder(__class__).find(name)
 
     @staticmethod
     def where(**kwargs):
