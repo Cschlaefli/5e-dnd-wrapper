@@ -1,6 +1,6 @@
 from dndsdk import Spell
 
-spells = Spell.where(name="Mage Armor")
+spells = Spell.where(name="Mage Armor").all()
 for spell in spells :
-    print(spell.desc)
+    print(spell.name)
 

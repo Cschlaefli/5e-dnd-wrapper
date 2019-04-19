@@ -1,3 +1,3 @@
 
 
-__endpoint__ = "http://www.dnd5eapi.co/api"
+__endpoint__ = "https://api-beta.open5e.com"

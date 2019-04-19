@@ -24,6 +24,7 @@ class RestClient(object):
 
         try :
             req = Request(request_url, headers={'User-Agent' :'Mozilla/5.0'})
+            print(request_url)
             response = json.loads(urlopen(req).read().decode("utf-8"))
             return response
         except HTTPError as err:

@@ -16,9 +16,17 @@ class Spell(object):
     RESOURCE = 'spells'
 
     """Usual attributes :
-    _id, index, name, desc, higher_level, page, range, components
-    material, ritual, duration, concentration, casting_time, level
-    school, classes, subclasses, url
+    slug, name, desc, higher_level, page, range
+    components, material, ritual, duration, concentration,
+    casting_time, level, school, dnd_class, archetypes, circles,
+    document_slug
+
+    filterable by : school, components, concentration, casting time
+    uselessly filterable by:
+    level(has to be converted to "xnd-level" because it's terrible),
+    duration(has to be converted to certain format)
+    dnd_class(this is garbage and needs to be fixed)
+
     See online docs for details."""
 
     # some keys in the response_dict are of the form fooBarBaz ;
